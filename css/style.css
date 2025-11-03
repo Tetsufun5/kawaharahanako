@@ -1,0 +1,483 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*-------------------------------------------------------------
+Common
+-------------------------------------------------------------*/
+
+/* * {
+    outline: 2px solid blue;
+}  */
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000;
+    font-family: "Shippori Mincho", serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+    font-style: normal;
+}
+
+body ::-moz-selection {
+    background-color: #00afec;
+    color: #ffffff;
+}
+
+body ::selection {
+    background-color: #00afec;
+    color: #ffffff;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a {
+    color: #1D1D1D;
+    text-decoration: none;
+}
+@media (any-hover: hover) {
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.en1 {
+  font-family: "Figtree", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.en2 {
+  font-family: "Figtree", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*---------------------Button------------------------------- */
+
+.cmnBtn {
+    font-family: "Figtree", sans-serif;
+    border: solid 1px #000;
+    padding: 3px 30px;
+    text-decoration: none;
+    position: relative;
+	overflow: hidden;
+    display: inline-block;
+    transition: ease .2s;
+}
+
+.cmnBtn:hover {
+    color: #ffffff;
+}
+
+.cmnBtn::before {
+ 	content: '';
+    /*絶対配置で位置を指定*/
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	z-index: -1;
+    /*色や形状*/
+ 	background:#000;/*背景色*/
+ 	width: 100%;
+	height: 100%;
+    /*アニメーション*/
+ 	transition: transform .3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+ 	transform: scale(0, 5);
+	transform-origin: left top;
+}
+
+.cmnBtn:hover:before{
+	transform-origin:left top;
+	transform:scale(1, 2);
+}
+
+.cmnBtn2 {
+    font-family: "Figtree", sans-serif;
+    border: solid 1px #ffffff;
+    padding: 3px 30px;
+    text-decoration: none;
+    position: relative;
+	overflow: hidden;
+    display: inline-block;
+    transition: ease .2s;
+    z-index: 1;
+}
+
+.cmnBtn2:hover {
+    color: #00afec;
+}
+
+.cmnBtn2::before {
+ 	content: '';
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+    z-index: -1;
+ 	background:#ffffff;
+ 	width: 100%;
+	height: 100%;
+ 	transition: transform .3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+ 	transform: scale(0, 5);
+	transform-origin: left top;
+}
+
+.cmnBtn2:hover:before{
+	transform-origin:left top;
+	transform:scale(1, 2);
+}
+
+/*---------------------Title-------------------------------- */
+
+.h1title {
+    font-size: 80px;
+    line-height: 100%;
+}
+
+/*-------------------------------------------------------------
+Header
+-------------------------------------------------------------*/
+
+.header {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px;
+}
+
+.header__logo {
+    width: clamp(10%, 40vmin, 135px);
+}
+
+.g-navi {
+    display: flex;
+}
+
+.g-naviLi {
+    margin-left: 40px;
+}
+
+.g-naviLi a {
+    display: flex;
+}
+
+.hlistIcon {
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    width: 12px;
+    position: relative;
+}
+
+.hlistIcon::before {
+    content: "";
+    height: 12px;
+    width: 1px;
+    background-color: #ffffff;
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    display: block;
+}
+
+/*-------------------------------------------------------------
+Hero
+-------------------------------------------------------------*/
+
+/*------------------------Hero-Cmn-------------------------- */
+
+.slider {
+    height: 100vh;
+}
+
+.slick-slide img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.cmnHeroTitle {
+    position: absolute;
+    z-index: 100;
+    top: 500px;
+    right: 0;
+    padding: 30px;
+    background-color: #ffffff;
+}
+
+/*-------------------------------------------------------------
+About
+-------------------------------------------------------------*/
+
+/*------------------------About-Home------------------------ */
+
+.aboutTex {
+    padding: 120px 0;
+    position: relative;
+}
+
+.aboutTex--img {
+    position: absolute;
+    top: 220px;
+    left: 280px;
+    width: 400px;
+}
+
+.aboutTex--Inner {
+    margin-left: 50%;
+}
+
+.aboutTex--Back {
+    height: 550px;
+    overflow: hidden;
+}
+
+.aboutTex--BackIn {
+    width: 100%;
+    height: 100%;
+    background-image: url(/Users/funadatessin/Desktop/other/ポートフォリオ作り方/素材/web/img/about2.jpg);
+    background-size: cover;
+}
+
+/*-------------------------------------------------------------
+Product
+-------------------------------------------------------------*/
+
+.product {
+    width: 100%;
+    height: 90vh;
+    padding: 10px;
+    position: relative;
+}
+
+.productImg {
+    height: 100%;
+    object-fit: cover;
+}
+
+.productTex {
+    color: #ffffff;
+    position: absolute;
+    bottom: -10px;
+    left: 30px;
+}
+
+.productTex1 {
+    font-size: 80px;
+    line-height: 100px;
+}
+
+.productTex2 {
+    font-size: 30px;
+}
+
+/*------------------------Lineup---------------------------- */
+
+.Lineup {
+    padding: 40px;
+    margin-bottom: 100px;
+}
+
+.LineupTex {
+    margin: 30px 0;
+}
+
+.LineupImg {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.LineupImg--b {
+    width: 300px;
+    margin: 0 10px 20px 0;
+}
+
+.LineupBtn {
+    padding: 0 40px;
+    display: flex;
+    justify-content: end;
+}
+
+/*------------------------Feature--------------------------- */
+
+.feature {
+    height: 1330px;
+    background-color: #00516e;
+    position: relative;
+}
+
+.feature1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 95%;
+}
+
+.feature2 {
+    position: absolute;
+    top: 65px;
+    left: 15%;
+    width: 500px;
+    z-index: 3;
+}
+
+.feature3 {
+    position: absolute;
+    top: 36%;
+    left: 40%;
+    width: 500px;
+}
+
+/*------------------------Factor---------------------------- */
+
+.factor {
+    position: relative;
+}
+
+.factor img {
+    object-fit: cover;
+    width: 100%;
+    height: 100dvh;
+}
+
+.factorTex {
+    color: #ffffff;
+    font-size: 30px;
+    position: absolute;
+    top: 30%;
+    left: 30px;
+}
+
+.factorBtn {
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+}
+
+/*-------------------------------------------------------------
+NEWS
+-------------------------------------------------------------*/
+
+.news {
+    padding:130px 30px;
+    width: 100%;
+}
+
+.newsIn {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.newsInTitle {
+    margin-bottom: 30px;
+}
+
+.newsInLi {
+    display: inline-block;
+    text-align: left;
+}
+
+.newsInLiContent {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.newsInLiContentTime {
+    width: 130px;
+}
+
+.newsInLiContentTime p {
+    align-items: left;
+}
+
+/*-------------------------------------------------------------
+Footer
+-------------------------------------------------------------*/
+
+.footer {
+    max-width: 100%;
+    color: #ffffff;
+}
+
+.footerIn {
+    background-color: #000;
+    padding: 60px 40px 50px;
+}
+
+.footerInLi {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerInLiLight {
+    width: 20%;
+    text-align: left;
+}
